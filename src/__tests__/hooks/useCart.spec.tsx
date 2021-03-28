@@ -220,7 +220,7 @@ describe('useCart Hook', () => {
       result.current.addProduct(productId);
     });
 
-    await waitFor(
+    waitFor(
       () => {
         expect(mockedToastError).toHaveBeenCalledWith(
           'Quantidade solicitada fora de estoque'
@@ -231,7 +231,7 @@ describe('useCart Hook', () => {
         expect(mockedSetItemLocalStorage).not.toHaveBeenCalled();
       },
       {
-        timeout: 200,
+        timeout: 1500,
       }
     );
   });
