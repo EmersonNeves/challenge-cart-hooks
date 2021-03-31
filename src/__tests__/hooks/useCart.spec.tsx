@@ -220,7 +220,7 @@ describe('useCart Hook', () => {
       result.current.addProduct(productId);
     });
 
-    waitFor(
+    await waitFor(
       () => {
         expect(mockedToastError).toHaveBeenCalledWith(
           'Quantidade solicitada fora de estoque'
